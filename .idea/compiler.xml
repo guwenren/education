@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="education-common" />
+        <module name="education-common-conf" />
+        <module name="education-user" />
+        <module name="education-user-facade" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="education" target="1.5" />
+      <module name="education-common" target="1.8" />
+      <module name="education-common-conf" target="1.8" />
+      <module name="education-parent" target="1.8" />
+      <module name="education-user" target="1.5" />
+      <module name="education-user-facade" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
