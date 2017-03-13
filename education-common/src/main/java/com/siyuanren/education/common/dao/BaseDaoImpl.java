@@ -150,9 +150,9 @@ public abstract class BaseDaoImpl<T extends BaseEntity> extends SqlSessionDaoSup
 
 		// 统计总记录数
 		Object countObject = (Object) getSqlSession().selectOne(getStatement(sqlId), new ExecutorInterceptor.CountParameter(paramMap));
-		Long count = Long.valueOf(countObject.toString());
+		Integer count = Integer.valueOf(countObject.toString());
 
-		return new PageBean(pageParam.getPageNum(), pageParam.getNumPerPage(), count.intValue(), list);
+		return new PageBean(pageParam.getPageNum(), pageParam.getNumPerPage(), count, list);
 	}
     @Override
 	public PageBean listPage(PageParam pageParam, Map<String, Object> paramMap) {
@@ -167,15 +167,15 @@ public abstract class BaseDaoImpl<T extends BaseEntity> extends SqlSessionDaoSup
 		// 统计总记录数
 		Object countObject = (Object) getSqlSession().selectOne(getStatement(SQL_LIST_PAGE),
 				new ExecutorInterceptor.CountParameter(paramMap));
-		Long count = Long.valueOf(countObject.toString());
+		Integer count = Integer.valueOf(countObject.toString());
 
 		// 是否统计当前分页条件下的数据：1:是，其他为否
 		Object isCount = paramMap.get("isCount");
 		if (isCount != null && "1".equals(isCount.toString())) {
 			Map<String, Object> countResultMap = sessionTemplate.selectOne(getStatement(SQL_COUNT_BY_PAGE_PARAM), paramMap);
-			return new PageBean(pageParam.getPageNum(), pageParam.getNumPerPage(), count.intValue(), list, countResultMap);
+			return new PageBean(pageParam.getPageNum(), pageParam.getNumPerPage(), count, list, countResultMap);
 		} else {
-			return new PageBean(pageParam.getPageNum(), pageParam.getNumPerPage(), count.intValue(), list);
+			return new PageBean(pageParam.getPageNum(), pageParam.getNumPerPage(), count, list);
 		}
 	}
 

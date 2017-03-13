@@ -3,23 +3,84 @@
 <mapper namespace="com.siyuanren.education.user.dao.impl.UserInfoDAOImpl">
     <sql id="table"> userinfo </sql>
 
-    <sql id="baseColumnList">
-        u.id as id ,
-        u.user_id as userId ,
-        u.user_name as userName ,
-        u.real_name as realName ,
-        u.phone as phone ,
-        u.email as email ,
-        u.course_advisor as courseAdvisor
-    </sql>
+    <sql id="Base_Column_List" >
+        id, user_id, user_name, real_name, phone, email, course_advisor
+   </sql>
 
+    <resultMap id="BaseResultMap" type="Userinfo" >
+        <id column="id" property="id" jdbcType="INTEGER" />
+        <result column="user_id" property="userId" jdbcType="INTEGER" />
+        <result column="user_name" property="userName" jdbcType="VARCHAR" />
+        <result column="real_name" property="realName" jdbcType="VARCHAR" />
+        <result column="phone" property="phone" jdbcType="VARCHAR" />
+        <result column="email" property="email" jdbcType="VARCHAR" />
+        <result column="course_advisor" property="courseAdvisor" jdbcType="VARCHAR" />
+    </resultMap>
 
-    <select id="getById" parameterType="int" resultType="UserInfo">
-        select <include refid="baseColumnList"/>
+    <select id="getById" parameterType="int" resultMap="BaseResultMap">
+        select <include refid="Base_Column_List"/>
         from
-        <include refid="table"/>
+        userinfo
         u
         where u.ID = #{id}
     </select>
 
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="Userinfo" >
+        insert into userinfo (id, user_id, user_name,real_name, phone, email,course_advisor)
+        values (#{id,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{userName,jdbcType=VARCHAR},
+        #{realName,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR},
+        #{courseAdvisor,jdbcType=VARCHAR})
+    </insert>
+
+    <update id="update" parameterType="Userinfo" >
+        update userinfo
+        set user_id = #{userId,jdbcType=INTEGER},
+        user_name = #{userName,jdbcType=VARCHAR},
+        real_name = #{realName,jdbcType=VARCHAR},
+        phone = #{phone,jdbcType=VARCHAR},
+        email = #{email,jdbcType=VARCHAR},
+        course_advisor = #{courseAdvisor,jdbcType=VARCHAR}
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+
+    <delete id="deleteById" parameterType="int">
+        DELETE FROM
+        userinfo
+        where ID = #{id}
+    </delete>
+
+    <select id="listBy" parameterType="java.util.Map" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List" />
+        from
+        <include refid="table" />
+        <where>
+            <include refid="condition_sql" />
+        </where>
+    </select>
+
+    <select id="listPage" parameterType="java.util.Map" resultMap="BaseResultMap">
+        select * from
+        <include refid="table" />
+        <where>
+            <include refid="condition_sql" />
+        </where>
+        <![CDATA[ order by ID desc]]>
+    </select>
+
+    <select id="listPageCount" parameterType="java.util.Map" resultType="int">
+        select count(1) from
+        <include refid="table" />
+        <where>
+            <include refid="condition_sql" />
+        </where>
+    </select>
+
+    <sql id="condition_sql">
+        <if test="email != null and email != ''"> and email = #{email}</if>
+        <!--<if test="payWayName != null and payWayName != ''"> and PAY_WAY_NAME = #{payWayName}</if>-->
+        <!--<if test="payProductCode != null and payProductCode != ''"> and PAY_PRODUCT_CODE = #{payProductCode}</if>-->
+        <!--<if test="defaultPayInterface != null and defaultPayInterface != ''"> and DEFAULT_PAY_INTERFACE = #{defaultPayInterface}</if>-->
+        <!--<if test="status != null and status != ''"> and STATUS = #{status}</if>-->
+    </sql>
 </mapper>
