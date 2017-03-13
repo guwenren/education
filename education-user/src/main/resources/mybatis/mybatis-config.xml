@@ -51,6 +51,6 @@
 
 	<mappers>
 		<!-- 权限 -->
-		<mapper resource="mybatis/mapper/user/AgencyUserMapper.xml" />
+		<mapper resource="mybatis/mapper/user/UserInfoMapper.xml" />
 	</mappers>
 </configuration>

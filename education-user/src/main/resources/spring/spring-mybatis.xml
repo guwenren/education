@@ -12,9 +12,9 @@
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="clone">
         <!-- 基本属性driverClassName、 url、user、password -->
         <property name="driverClassName" value="${jdbc.driverClassName}"/>
-        <property name="url" value="${lms_renew.jdbc.url}"/>
-        <property name="username" value="${lms_renew.jdbc.username}"/>
-        <property name="password" value="${lms_renew.jdbc.password}"/>
+        <property name="url" value="${sy_lms.jdbc.url}"/>
+        <property name="username" value="${sy_lms.jdbc.username}"/>
+        <property name="password" value="${sy_lms.jdbc.password}"/>
 
         <!-- 配置初始化大小、最小、最大 -->
         <!-- 通常来说，只需要修改initialSize、minIdle、maxActive -->

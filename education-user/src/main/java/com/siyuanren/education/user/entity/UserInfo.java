@@ -16,21 +16,12 @@ public class UserInfo extends BaseEntity implements Serializable {
 
     private static final long serialVersionUID = 1978384267467136513L;
 
-    private Integer id;
     private Integer userId;
     private String userName;
     private String realName;
     private String phone;
     private String email;
     private String courseAdvisor;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
     public Integer getUserId() {
         return userId;

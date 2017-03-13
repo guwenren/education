@@ -7,7 +7,7 @@
 <!--每个logger都关联到logger上下文，默认上下文名称为default。但可以使用<contextName>设置成其他名字，用于区分不同应用程序的记录。一旦设置，不能修改。-->
 <configuration scan="true" scanPeriod="60 seconds" debug="false">
     <!-- 声明变量 -->
-    <property name="P_NAME" value="education-user"/>
+    <property name="P_NAME" value="accumulate"/>
     <timestamp key="P_SECOND" datePattern="yyyyMMdd'T'HHmmss"/>
     <property name="P_BASE" value="logs" />
     <contextName>${P_NAME}</contextName>
@@ -31,33 +31,15 @@
         </layout>
     </appender>
 
-    <!-- accumulate-service-user日志 -->
-    <appender name="education-user" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <Encoding>UTF-8</Encoding>
-        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <FileNamePattern>${P_BASE}/${P_NAME}.%d{yyyy-MM-dd}.log</FileNamePattern>
-            <MaxHistory>30</MaxHistory>
-        </rollingPolicy>
-        <layout class="ch.qos.logback.classic.PatternLayout">
-            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n
-            </pattern>
-        </layout>
-    </appender>
 
-    <!-- com.siyuanren.education.user为java中的包 -->
-    <logger name="com.siyuanren.education.user" level="INFO" additivity="true">
-        <appender-ref ref="education-user"/>
-    </logger>
-
-    <logger name="org.apache.ibatis" level="debug">
+    <!-- com.guwr.accumulate.common.cache为java中的包 -->
+    <logger name="com.guwr.accumulate.common.cache"/>
+    <!--logback.LogbackDemo：类的全路径 -->
+    <logger name="com.guwr.accumulate.common.cache.RedisUtils" level="INFO" additivity="false">
         <appender-ref ref="STDOUT"/>
     </logger>
 
-    <logger name="java.sql" level="debug">
-        <appender-ref ref="STDOUT"/>
-    </logger>
-
-    <root level="info">
+    <root level="INFO">
         <appender-ref ref="STDOUT"/>
         <appender-ref ref="FILE" />
     </root>

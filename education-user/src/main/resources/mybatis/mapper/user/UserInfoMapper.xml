@@ -1,34 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.siyuanren.user.dao.impl.AgencyUserDAOImpl">
-    <sql id="userinfo"> userinfo </sql>
+<mapper namespace="com.siyuanren.education.user.dao.impl.UserInfoDAOImpl">
+    <sql id="table"> userinfo </sql>
 
-    <resultMap id="BaseResultMap" type="UserInfo" >
-        <id column="id" property="id" jdbcType="INTEGER" />
-        <result column="user_id" property="userId" jdbcType="INTEGER" />
-        <result column="user_name" property="userName" jdbcType="VARCHAR" />
-        <result column="real_name" property="realName" jdbcType="VARCHAR" />
-        <result column="phone" property="phone" jdbcType="VARCHAR" />
-        <result column="email" property="email" jdbcType="VARCHAR" />
-        <result column="course_advisor" property="courseAdvisor" jdbcType="VARCHAR" />
-    </resultMap>
+    <sql id="baseColumnList">
+        u.id as id ,
+        u.user_id as userId ,
+        u.user_name as userName ,
+        u.real_name as realName ,
+        u.phone as phone ,
+        u.email as email ,
+        u.course_advisor as courseAdvisor
+    </sql>
+
 
     <select id="getById" parameterType="int" resultType="UserInfo">
-        select *
+        select <include refid="baseColumnList"/>
         from
-        <include refid="userinfo"/>
-        D
-        where D.ID = #{id}
+        <include refid="table"/>
+        u
+        where u.ID = #{id}
     </select>
 
-    <insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="UserInfo" >
-        insert into userinfo (id, user_name, real_name,
-        password_encrypt, created_at, mobile,
-        role, agency_id, web_token,
-        disabled)
-        values (#{id,jdbcType=INTEGER}, #{userName,jdbcType=VARCHAR}, #{realName,jdbcType=VARCHAR},
-        #{passwordEncrypt,jdbcType=VARCHAR}, #{createdAt,jdbcType=BIGINT}, #{mobile,jdbcType=VARCHAR},
-        #{role,jdbcType=VARCHAR}, #{agencyId,jdbcType=INTEGER}, #{webToken,jdbcType=VARCHAR},
-        #{disabled,jdbcType=TINYINT})
-    </insert>
 </mapper>

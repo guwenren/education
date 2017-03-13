@@ -17,7 +17,7 @@
       <module name="education-common" target="1.8" />
       <module name="education-common-conf" target="1.8" />
       <module name="education-parent" target="1.8" />
-      <module name="education-user" target="1.5" />
+      <module name="education-user" target="1.8" />
       <module name="education-user-facade" target="1.8" />
     </bytecodeTargetLevel>
   </component>

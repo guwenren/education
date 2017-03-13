@@ -10,6 +10,12 @@
           <element id="archive" name="education-common-conf-1.0-SNAPSHOT.jar">
             <element id="module-output" name="education-common-conf" />
           </element>
+          <element id="archive" name="education-common-1.0-SNAPSHOT.jar">
+            <element id="module-output" name="education-common" />
+          </element>
+          <element id="archive" name="education-user-facade-1.0-SNAPSHOT.jar">
+            <element id="module-output" name="education-user-facade" />
+          </element>
           <element id="library" level="project" name="Maven: cglib:cglib:2.2.2" />
           <element id="library" level="project" name="Maven: asm:asm:3.3.1" />
           <element id="library" level="project" name="Maven: org.mybatis:mybatis:3.2.2" />
@@ -142,12 +148,6 @@
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.2.3" />
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.2.3" />
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.2.3" />
-          <element id="archive" name="education-common-1.0-SNAPSHOT.jar">
-            <element id="module-output" name="education-common" />
-          </element>
-          <element id="archive" name="education-user-facade-1.0-SNAPSHOT.jar">
-            <element id="module-output" name="education-user-facade" />
-          </element>
         </element>
       </element>
       <element id="directory" name="META-INF">
