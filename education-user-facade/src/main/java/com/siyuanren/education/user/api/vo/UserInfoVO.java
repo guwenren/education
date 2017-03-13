@@ -1,6 +1,6 @@
 package com.siyuanren.education.user.api.vo;
 
-import java.io.Serializable;
+import com.siyuanren.education.common.web.vo.BaseVO;
 
 /**
  * Created by   guwr
@@ -10,7 +10,7 @@ import java.io.Serializable;
  * Time         17:14
  * Description
  */
-public class UserInfoVO  implements Serializable {
+public class UserInfoVO extends BaseVO {
 
     private static final long serialVersionUID = 2572950251683859893L;
 }
