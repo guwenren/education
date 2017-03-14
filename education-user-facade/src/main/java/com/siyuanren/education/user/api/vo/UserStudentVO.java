@@ -12,6 +12,7 @@ import com.siyuanren.education.common.web.vo.BaseVO;
  */
 public class UserStudentVO extends BaseVO {
     private String mobile; //手机号码
+    private String userName; //用户名称
     private String verificationCode; //验证码
     private String password; //
 
@@ -21,6 +22,14 @@ public class UserStudentVO extends BaseVO {
 
     public void setMobile(String mobile) {
         this.mobile = mobile;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public String getVerificationCode() {

@@ -134,4 +134,22 @@
       hyp_certificate = #{hypCertificate,jdbcType=VARCHAR}
     where id = #{id,jdbcType=BIGINT}
   </update>
+
+    <select id="getUserStudentByMobile" parameterType="java.util.Map" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from
+        <include refid="table"/>
+        u
+        where u.mobile = #{mobile,jdbcType=VARCHAR}
+    </select>
+
+    <select id="getUserStudentByUserName" parameterType="java.util.Map" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from
+        <include refid="table"/>
+        u
+        where u.user_name = #{userName,jdbcType=VARCHAR}
+    </select>
 </mapper>

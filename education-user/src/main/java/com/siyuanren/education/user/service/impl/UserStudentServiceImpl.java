@@ -1,6 +1,7 @@
 package com.siyuanren.education.user.service.impl;
 
 
+import com.alibaba.fastjson.JSON;
 import com.siyuanren.education.common.page.PageBean;
 import com.siyuanren.education.common.page.PageParam;
 import com.siyuanren.education.user.api.vo.UserStudentVO;
@@ -71,6 +72,12 @@ public class UserStudentServiceImpl implements UserStudentService {
 
     @Override
     public void login(UserStudentVO userStudentVO) {
+        String mobile = userStudentVO.getMobile();
+        String userName = userStudentVO.getUserName();
+        UserStudent userStudent = userStudentDAO.getUserStudentByMobile(mobile);
+        System.out.println("userStudent = " + JSON.toJSONString(userStudent));
 
+        userStudent = userStudentDAO.getUserStudentByUserName(userName);
+        System.out.println("userStudent = " + JSON.toJSONString(userStudent));
     }
 }

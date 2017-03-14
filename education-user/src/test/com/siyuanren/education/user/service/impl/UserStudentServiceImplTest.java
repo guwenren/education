@@ -2,6 +2,7 @@ package com.siyuanren.education.user.service.impl;
 
 import com.alibaba.fastjson.JSON;
 import com.siyuanren.education.user.BaseTest;
+import com.siyuanren.education.user.api.vo.UserStudentVO;
 import com.siyuanren.education.user.entity.UserStudent;
 import com.siyuanren.education.user.service.UserStudentService;
 import org.junit.Test;
@@ -16,9 +17,22 @@ import org.springframework.beans.factory.annotation.Autowired;
  * Description
  */
 public class UserStudentServiceImplTest extends BaseTest {
-
     @Autowired
     private UserStudentService userStudentService;
+
+    @Test
+    public void register() throws Exception {
+
+    }
+
+    @Test
+    public void login() throws Exception {
+        UserStudentVO userStudentVO = new UserStudentVO();
+        userStudentVO.setMobile("13888888888");
+        userStudentService.login(userStudentVO);
+        userStudentVO.setUserName("user_name");
+        userStudentService.login(userStudentVO);
+    }
 
     @Test
     public void getById() throws Exception {
@@ -48,10 +62,10 @@ public class UserStudentServiceImplTest extends BaseTest {
         userStudent.setCertificatePhoto("certificate_photo");
         userStudent.setIdNumber("id_number");
         userStudent.setIdcardImage("idcard_image");
-        userStudent.setMobileVerified((byte)0);
+        userStudent.setMobileVerified((byte) 0);
         userStudent.setCreatedAt(0L);
-        userStudent.setDisabled((byte)1);
-        userStudent.setRegisterFrom((byte)0);
+        userStudent.setDisabled((byte) 1);
+        userStudent.setRegisterFrom((byte) 0);
         userStudent.setEducationalBackgroundCode(0);
         userStudent.setProfessionCode(0);
         userStudent.setTypesOfDocumentsCode(0);
