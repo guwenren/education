@@ -21,7 +21,7 @@ public interface BaseDao<T> {
 	 *            .
 	 * @return id .
 	 */
-	int insert(T entity);
+	long insert(T entity);
 
 	/**
 	 * 批量保存对象.
@@ -30,7 +30,7 @@ public interface BaseDao<T> {
 	 *            .
 	 * @return id .
 	 */
-	int insert(List<T> list);
+	long insert(List<T> list);
 
 	/**
 	 * 更新实体对应的记录.

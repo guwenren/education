@@ -72,7 +72,7 @@ public abstract class BaseDaoImpl<T extends BaseEntity> extends SqlSessionDaoSup
 		return super.getSqlSession();
 	}
     @Override
-	public int insert(T t) {
+	public long insert(T t) {
 
 		if (t == null)
 			throw new RuntimeException("T is null");
@@ -88,7 +88,7 @@ public abstract class BaseDaoImpl<T extends BaseEntity> extends SqlSessionDaoSup
 		return result;
 	}
     @Override
-	public int insert(List<T> list) {
+	public long insert(List<T> list) {
 
 		if (list == null || list.size() <= 0)
 			return 0;

@@ -18,14 +18,14 @@ public class BaseEntity implements Serializable {
      * 创建时间
      */
     protected Date createTime;
-    private Integer id;
+    private Long id;
     private Integer version;
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
