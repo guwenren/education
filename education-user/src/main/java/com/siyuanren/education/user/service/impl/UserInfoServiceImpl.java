@@ -37,9 +37,9 @@ public class UserInfoServiceImpl implements UserInfoService {
     }
 
     @Override
-    public int insert(UserInfo userInfo) {
+    public long insert(UserInfo userInfo) {
         logger.info("userInfo = " + JSON.toJSONString(userInfo));
-        int result = userInfoDAO.insert(userInfo);
+        long result = userInfoDAO.insert(userInfo);
         return result;
     }
 

@@ -34,6 +34,7 @@
 	<typeAliases>
 		<!-- 权限 -->
 		<typeAlias alias="UserInfo" type="com.siyuanren.education.user.entity.UserInfo" />
+		<typeAlias alias="UserStudent" type="com.siyuanren.education.user.entity.UserStudent" />
 	</typeAliases>
 
 	<!-- 在在mappers定义之前 -->
@@ -52,5 +53,6 @@
 	<mappers>
 		<!-- 权限 -->
 		<mapper resource="mybatis/mapper/user/UserInfoMapper.xml" />
+		<mapper resource="mybatis/mapper/user/UserStudentMapper.xml" />
 	</mappers>
 </configuration>

@@ -4,6 +4,7 @@ package com.siyuanren.education.user.service;
 import com.siyuanren.education.common.page.PageBean;
 import com.siyuanren.education.common.page.PageParam;
 import com.siyuanren.education.user.entity.UserInfo;
+import com.siyuanren.education.user.entity.UserStudent;
 
 import java.util.List;
 import java.util.Map;
@@ -16,25 +17,25 @@ import java.util.Map;
  * Time         17:14
  * Description
  */
-public interface UserInfoService {
+public interface UserStudentService {
 
     /**
      * @param id
      * @return
      */
-    UserInfo getById(int id);
+    UserStudent getById(int id);
 
     /**
      * @param userInfo
      * @return
      */
-    long insert(UserInfo userInfo);
+    long insert(UserStudent userInfo);
 
     /**
      * @param userInfo
      * @return
      */
-    int update(UserInfo userInfo);
+    int update(UserStudent userInfo);
 
     /**
      *
@@ -48,7 +49,7 @@ public interface UserInfoService {
      * @param paramMap
      * @return
      */
-    List<UserInfo> listBy(Map<String, Object> paramMap);
+    List<UserStudent> listBy(Map<String, Object> paramMap);
 
     /**
      * 分页

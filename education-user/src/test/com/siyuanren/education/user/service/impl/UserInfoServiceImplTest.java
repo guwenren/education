@@ -72,7 +72,7 @@ public class UserInfoServiceImplTest extends BaseTest {
         userInfo.setPhone("test");
         userInfo.setRealName("test");
         userInfo.setUserId(19272);
-        int result = userInfoService.insert(userInfo);
+        long result = userInfoService.insert(userInfo);
         System.out.println("result = " + result);
     }
 

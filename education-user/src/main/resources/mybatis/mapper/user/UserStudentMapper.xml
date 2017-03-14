@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.siyuanren.education.user.dao.impl.UserStudentDAOImpl">
+    <sql id="table"> user_student </sql>
+    <resultMap id="BaseResultMap" type="UserStudent">
+        <id column="id" property="id" jdbcType="BIGINT"/>
+        <result column="user_name" property="userName" jdbcType="VARCHAR"/>
+        <result column="mobile_country" property="mobileCountry" jdbcType="VARCHAR"/>
+        <result column="mobile" property="mobile" jdbcType="VARCHAR"/>
+        <result column="mobile_verified" property="mobileVerified" jdbcType="TINYINT"/>
+        <result column="password_encrypt" property="passwordEncrypt" jdbcType="VARCHAR"/>
+        <result column="created_at" property="createdAt" jdbcType="BIGINT"/>
+        <result column="web_token" property="webToken" jdbcType="VARCHAR"/>
+        <result column="app_token" property="appToken" jdbcType="VARCHAR"/>
+        <result column="disabled" property="disabled" jdbcType="TINYINT"/>
+        <result column="course_advisor" property="courseAdvisor" jdbcType="VARCHAR"/>
+        <result column="register_from" property="registerFrom" jdbcType="TINYINT"/>
+        <result column="agency_id" property="agencyId" jdbcType="INTEGER"/>
+        <result column="profile_image" property="profileImage" jdbcType="VARCHAR"/>
+        <result column="nickname" property="nickname" jdbcType="VARCHAR"/>
+        <result column="sex" property="sex" jdbcType="VARCHAR"/>
+        <result column="birthday" property="birthday" jdbcType="DATE"/>
+        <result column="educational_background_code" property="educationalBackgroundCode" jdbcType="INTEGER"/>
+        <result column="profession_code" property="professionCode" jdbcType="INTEGER"/>
+        <result column="email" property="email" jdbcType="VARCHAR"/>
+        <result column="qq" property="qq" jdbcType="VARCHAR"/>
+        <result column="province" property="province" jdbcType="VARCHAR"/>
+        <result column="city" property="city" jdbcType="VARCHAR"/>
+        <result column="address" property="address" jdbcType="VARCHAR"/>
+        <result column="real_name" property="realName" jdbcType="VARCHAR"/>
+        <result column="certificate_photo" property="certificatePhoto" jdbcType="VARCHAR"/>
+        <result column="types_of_documents_code" property="typesOfDocumentsCode" jdbcType="INTEGER"/>
+        <result column="id_number" property="idNumber" jdbcType="VARCHAR"/>
+        <result column="idcard_image" property="idcardImage" jdbcType="VARCHAR"/>
+        <result column="zip_code" property="zipCode" jdbcType="VARCHAR"/>
+        <result column="phone_authentication_code" property="phoneAuthenticationCode" jdbcType="VARCHAR"/>
+        <result column="phone_authentication_flag" property="phoneAuthenticationFlag" jdbcType="BIT"/>
+        <result column="phone_unbound_tip_date" property="phoneUnboundTipDate" jdbcType="TIMESTAMP"/>
+        <result column="is_demo" property="isDemo" jdbcType="BIT"/>
+        <result column="last_time_prompt" property="lastTimePrompt" jdbcType="TIMESTAMP"/>
+        <result column="perfect_mark" property="perfectMark" jdbcType="BIT"/>
+        <result column="mfc_certificate" property="mfcCertificate" jdbcType="VARCHAR"/>
+        <result column="psy_certificate" property="psyCertificate" jdbcType="VARCHAR"/>
+        <result column="hyp_certificate" property="hypCertificate" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+    id, user_name, mobile_country, mobile, mobile_verified, password_encrypt, created_at, 
+    web_token, app_token, disabled, course_advisor, register_from, agency_id, profile_image, 
+    nickname, sex, birthday, educational_background_code, profession_code, email, qq, 
+    province, city, address, real_name, certificate_photo, types_of_documents_code, id_number, 
+    idcard_image, zip_code, phone_authentication_code, phone_authentication_flag, phone_unbound_tip_date, 
+    is_demo, last_time_prompt, perfect_mark, mfc_certificate, psy_certificate, hyp_certificate
+  </sql>
+
+    <select id="getById" parameterType="long" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from
+        <include refid="table"/>
+        u
+        where u.ID = #{id}
+    </select>
+
+    <insert id="insert" parameterType="UserStudent">
+    insert into user_student (id, user_name, mobile_country, 
+      mobile, mobile_verified, password_encrypt, 
+      created_at, web_token, app_token, 
+      disabled, course_advisor, register_from, 
+      agency_id, profile_image, nickname, 
+      sex, birthday, educational_background_code, 
+      profession_code, email, qq, 
+      province, city, address, 
+      real_name, certificate_photo, types_of_documents_code, 
+      id_number, idcard_image, zip_code, 
+      phone_authentication_code, phone_authentication_flag, 
+      phone_unbound_tip_date, is_demo, last_time_prompt, 
+      perfect_mark, mfc_certificate, psy_certificate, 
+      hyp_certificate)
+    values (#{id,jdbcType=BIGINT}, #{userName,jdbcType=VARCHAR}, #{mobileCountry,jdbcType=VARCHAR}, 
+      #{mobile,jdbcType=VARCHAR}, #{mobileVerified,jdbcType=TINYINT}, #{passwordEncrypt,jdbcType=VARCHAR}, 
+      #{createdAt,jdbcType=BIGINT}, #{webToken,jdbcType=VARCHAR}, #{appToken,jdbcType=VARCHAR}, 
+      #{disabled,jdbcType=TINYINT}, #{courseAdvisor,jdbcType=VARCHAR}, #{registerFrom,jdbcType=TINYINT}, 
+      #{agencyId,jdbcType=INTEGER}, #{profileImage,jdbcType=VARCHAR}, #{nickname,jdbcType=VARCHAR}, 
+      #{sex,jdbcType=VARCHAR}, #{birthday,jdbcType=DATE}, #{educationalBackgroundCode,jdbcType=INTEGER}, 
+      #{professionCode,jdbcType=INTEGER}, #{email,jdbcType=VARCHAR}, #{qq,jdbcType=VARCHAR}, 
+      #{province,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, 
+      #{realName,jdbcType=VARCHAR}, #{certificatePhoto,jdbcType=VARCHAR}, #{typesOfDocumentsCode,jdbcType=INTEGER}, 
+      #{idNumber,jdbcType=VARCHAR}, #{idcardImage,jdbcType=VARCHAR}, #{zipCode,jdbcType=VARCHAR}, 
+      #{phoneAuthenticationCode,jdbcType=VARCHAR}, #{phoneAuthenticationFlag,jdbcType=BIT}, 
+      #{phoneUnboundTipDate,jdbcType=TIMESTAMP}, #{isDemo,jdbcType=BIT}, #{lastTimePrompt,jdbcType=TIMESTAMP}, 
+      #{perfectMark,jdbcType=BIT}, #{mfcCertificate,jdbcType=VARCHAR}, #{psyCertificate,jdbcType=VARCHAR}, 
+      #{hypCertificate,jdbcType=VARCHAR})
+  </insert>
+    <update id="update" parameterType="UserStudent">
+    update user_student
+    set user_name = #{userName,jdbcType=VARCHAR},
+      mobile_country = #{mobileCountry,jdbcType=VARCHAR},
+      mobile = #{mobile,jdbcType=VARCHAR},
+      mobile_verified = #{mobileVerified,jdbcType=TINYINT},
+      password_encrypt = #{passwordEncrypt,jdbcType=VARCHAR},
+      created_at = #{createdAt,jdbcType=BIGINT},
+      web_token = #{webToken,jdbcType=VARCHAR},
+      app_token = #{appToken,jdbcType=VARCHAR},
+      disabled = #{disabled,jdbcType=TINYINT},
+      course_advisor = #{courseAdvisor,jdbcType=VARCHAR},
+      register_from = #{registerFrom,jdbcType=TINYINT},
+      agency_id = #{agencyId,jdbcType=INTEGER},
+      profile_image = #{profileImage,jdbcType=VARCHAR},
+      nickname = #{nickname,jdbcType=VARCHAR},
+      sex = #{sex,jdbcType=VARCHAR},
+      birthday = #{birthday,jdbcType=DATE},
+      educational_background_code = #{educationalBackgroundCode,jdbcType=INTEGER},
+      profession_code = #{professionCode,jdbcType=INTEGER},
+      email = #{email,jdbcType=VARCHAR},
+      qq = #{qq,jdbcType=VARCHAR},
+      province = #{province,jdbcType=VARCHAR},
+      city = #{city,jdbcType=VARCHAR},
+      address = #{address,jdbcType=VARCHAR},
+      real_name = #{realName,jdbcType=VARCHAR},
+      certificate_photo = #{certificatePhoto,jdbcType=VARCHAR},
+      types_of_documents_code = #{typesOfDocumentsCode,jdbcType=INTEGER},
+      id_number = #{idNumber,jdbcType=VARCHAR},
+      idcard_image = #{idcardImage,jdbcType=VARCHAR},
+      zip_code = #{zipCode,jdbcType=VARCHAR},
+      phone_authentication_code = #{phoneAuthenticationCode,jdbcType=VARCHAR},
+      phone_authentication_flag = #{phoneAuthenticationFlag,jdbcType=BIT},
+      phone_unbound_tip_date = #{phoneUnboundTipDate,jdbcType=TIMESTAMP},
+      is_demo = #{isDemo,jdbcType=BIT},
+      last_time_prompt = #{lastTimePrompt,jdbcType=TIMESTAMP},
+      perfect_mark = #{perfectMark,jdbcType=BIT},
+      mfc_certificate = #{mfcCertificate,jdbcType=VARCHAR},
+      psy_certificate = #{psyCertificate,jdbcType=VARCHAR},
+      hyp_certificate = #{hypCertificate,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

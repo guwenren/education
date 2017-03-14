@@ -17,23 +17,23 @@
         <result column="course_advisor" property="courseAdvisor" jdbcType="VARCHAR" />
     </resultMap>
 
-    <select id="getById" parameterType="int" resultMap="BaseResultMap">
+    <select id="getById" parameterType="long" resultMap="BaseResultMap">
         select <include refid="Base_Column_List"/>
         from
-        userinfo
+        <include refid="table" />
         u
         where u.ID = #{id}
     </select>
 
     <insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="Userinfo" >
-        insert into userinfo (id, user_id, user_name,real_name, phone, email,course_advisor)
+        insert into <include refid="table" /> (id, user_id, user_name,real_name, phone, email,course_advisor)
         values (#{id,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{userName,jdbcType=VARCHAR},
         #{realName,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR},
         #{courseAdvisor,jdbcType=VARCHAR})
     </insert>
 
     <update id="update" parameterType="Userinfo" >
-        update userinfo
+        update <include refid="table" />
         set user_id = #{userId,jdbcType=INTEGER},
         user_name = #{userName,jdbcType=VARCHAR},
         real_name = #{realName,jdbcType=VARCHAR},
@@ -45,7 +45,7 @@
 
     <delete id="deleteById" parameterType="int">
         DELETE FROM
-        userinfo
+        <include refid="table" />
         where ID = #{id}
     </delete>
 
