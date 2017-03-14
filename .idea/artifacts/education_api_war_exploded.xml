@@ -1,10 +1,10 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" name="education-user:war exploded">
-    <output-path>$PROJECT_DIR$/education-user/target/education-user</output-path>
+  <artifact type="exploded-war" name="education-api:war exploded">
+    <output-path>$PROJECT_DIR$/education-api/target/education-api</output-path>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="module-output" name="education-user" />
+          <element id="module-output" name="education-api" />
         </element>
         <element id="directory" name="lib">
           <element id="archive" name="education-common-1.0-SNAPSHOT.jar">
@@ -150,9 +150,9 @@
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/education-user/target/education-user/META-INF/MANIFEST.MF" />
+        <element id="file-copy" path="$PROJECT_DIR$/education-api/target/education-api/META-INF/MANIFEST.MF" />
       </element>
-      <element id="javaee-facet-resources" facet="education-user/web/Web" />
+      <element id="javaee-facet-resources" facet="education-api/web/Web" />
     </root>
   </artifact>
 </component>

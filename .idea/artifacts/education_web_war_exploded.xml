@@ -1,10 +1,10 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" name="education-user:war exploded">
-    <output-path>$PROJECT_DIR$/education-user/target/education-user</output-path>
+  <artifact type="exploded-war" name="education-web:war exploded">
+    <output-path>$PROJECT_DIR$/education-web/target/education-web</output-path>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="module-output" name="education-user" />
+          <element id="module-output" name="education-api" />
         </element>
         <element id="directory" name="lib">
           <element id="archive" name="education-common-1.0-SNAPSHOT.jar">
@@ -12,9 +12,6 @@
           </element>
           <element id="archive" name="education-common-conf-1.0-SNAPSHOT.jar">
             <element id="module-output" name="education-common-conf" />
-          </element>
-          <element id="archive" name="education-user-facade-1.0-SNAPSHOT.jar">
-            <element id="module-output" name="education-user-facade" />
           </element>
           <element id="library" level="project" name="Maven: cglib:cglib:2.2.2" />
           <element id="library" level="project" name="Maven: asm:asm:3.3.1" />
@@ -96,7 +93,8 @@
           <element id="library" level="project" name="Maven: com.caucho:hessian:4.0.7" />
           <element id="library" level="project" name="Maven: org.mortbay.jetty:jetty:6.1.26" />
           <element id="library" level="project" name="Maven: org.mortbay.jetty:jetty-util:6.1.26" />
-          <element id="library" level="project" name="Maven: javax.validation:validation-api:1.0.0.GA" />
+          <element id="library" level="project" name="Maven: javax.validation:validation-api:1.1.0.Final" />
+          <element id="library" level="project" name="Maven: org.hibernate:hibernate-validator:4.2.0.Final" />
           <element id="library" level="project" name="Maven: javax.cache:cache-api:0.4" />
           <element id="library" level="project" name="Maven: javax.ws.rs:javax.ws.rs-api:2.0" />
           <element id="library" level="project" name="Maven: org.jboss.resteasy:resteasy-jaxrs:3.0.7.Final" />
@@ -150,9 +148,9 @@
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/education-user/target/education-user/META-INF/MANIFEST.MF" />
+        <element id="file-copy" path="$PROJECT_DIR$/education-api/target/education-web/META-INF/MANIFEST.MF" />
       </element>
-      <element id="javaee-facet-resources" facet="education-user/web/Web" />
+      <element id="javaee-facet-resources" facet="education-api/web/Web" />
     </root>
   </artifact>
 </component>

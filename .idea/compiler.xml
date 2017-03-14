@@ -6,19 +6,23 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="education-api" />
         <module name="education-common" />
         <module name="education-common-conf" />
         <module name="education-user" />
         <module name="education-user-facade" />
+        <module name="education-web" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="education" target="1.5" />
+      <module name="education-api" target="1.8" />
       <module name="education-common" target="1.8" />
       <module name="education-common-conf" target="1.8" />
       <module name="education-parent" target="1.8" />
       <module name="education-user" target="1.8" />
       <module name="education-user-facade" target="1.8" />
+      <module name="education-web" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>

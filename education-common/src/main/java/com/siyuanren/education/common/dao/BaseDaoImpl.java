@@ -51,14 +51,14 @@ public abstract class BaseDaoImpl<T extends BaseEntity> extends SqlSessionDaoSup
 	 */
 	private SqlSessionTemplate sessionTemplate;
 
-    @Autowired
+	@Autowired(required = false)
 	protected SqlSessionFactory sqlSessionFactory;
 
-	@Autowired
+	@Autowired(required = false)
 	private DruidDataSource druidDataSource;
 
 
-	@Autowired
+	@Autowired(required = false)
 	public void setSqlSessionTemplate(SqlSessionTemplate sqlSessionTemplate) {
 		sessionTemplate = sqlSessionTemplate;
 		super.setSqlSessionTemplate(sqlSessionTemplate);
