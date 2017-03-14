@@ -29,7 +29,6 @@ public class UserController extends BaseController {
     @ResponseBody
     public Result index(@RequestParam(value = "id", defaultValue = "1") int id) {
         Result result = new Result();
-        System.out.println("id = [" + id + "]");
         UserInfoDTO userInfoDTO = userInfoFacade.getUserInfo(id);
         System.out.println("userInfoDTO = " + JSON.toJSONString(userInfoDTO));
         return result;
