@@ -45,16 +45,8 @@
     </appender>
 
     <!-- com.siyuanren.education.user为java中的包 -->
-    <logger name="com.siyuanren.education.user" level="INFO" additivity="true">
+    <logger name="com.siyuanren.education.user" level="info" additivity="false">
         <appender-ref ref="education-user"/>
-    </logger>
-
-    <logger name="org.apache.ibatis" level="debug">
-        <appender-ref ref="STDOUT"/>
-    </logger>
-
-    <logger name="java.sql" level="debug">
-        <appender-ref ref="STDOUT"/>
     </logger>
 
     <root level="info">

@@ -3,7 +3,7 @@ package com.siyuanren.education.user.service;
 
 import com.siyuanren.education.common.page.PageBean;
 import com.siyuanren.education.common.page.PageParam;
-import com.siyuanren.education.user.entity.UserInfo;
+import com.siyuanren.education.user.api.vo.UserStudentVO;
 import com.siyuanren.education.user.entity.UserStudent;
 
 import java.util.List;
@@ -38,7 +38,6 @@ public interface UserStudentService {
     int update(UserStudent userInfo);
 
     /**
-     *
      * @param id
      * @return
      */
@@ -46,6 +45,7 @@ public interface UserStudentService {
 
     /**
      * 列表
+     *
      * @param paramMap
      * @return
      */
@@ -53,9 +53,25 @@ public interface UserStudentService {
 
     /**
      * 分页
+     *
      * @param pageParam
      * @param paramMap
      * @return
      */
     PageBean listPage(PageParam pageParam, Map<String, Object> paramMap);
+
+
+    /**
+     * 用户注册
+     *
+     * @param userStudentVO
+     */
+    void register(UserStudentVO userStudentVO);
+
+    /**
+     * 用户登录
+     *
+     * @param userStudentVO
+     */
+    void login(UserStudentVO userStudentVO);
 }

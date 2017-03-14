@@ -62,7 +62,7 @@
         where u.ID = #{id}
     </select>
 
-    <insert id="insert" parameterType="UserStudent">
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="UserStudent">
     insert into user_student (id, user_name, mobile_country, 
       mobile, mobile_verified, password_encrypt, 
       created_at, web_token, app_token, 

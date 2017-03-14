@@ -28,7 +28,35 @@ public class UserStudentServiceImplTest extends BaseTest {
 
     @Test
     public void insert() throws Exception {
-
+        UserStudent userStudent = new UserStudent();
+        userStudent.setUserName("user_name");
+        userStudent.setMobileCountry("86");
+        userStudent.setMobile("13888888888");
+        userStudent.setPasswordEncrypt("password_encrypt");
+        userStudent.setWebToken("web_token");
+        userStudent.setAppToken("app_token");
+        userStudent.setCourseAdvisor("course_advisor");
+        userStudent.setProfileImage("profile_image");
+        userStudent.setNickname("nickname");
+        userStudent.setSex("sex");
+        userStudent.setEmail("email");
+        userStudent.setQq("qq");
+        userStudent.setProvince("province");
+        userStudent.setCity("city");
+        userStudent.setAddress("address");
+        userStudent.setRealName("real_name");
+        userStudent.setCertificatePhoto("certificate_photo");
+        userStudent.setIdNumber("id_number");
+        userStudent.setIdcardImage("idcard_image");
+        userStudent.setMobileVerified((byte)0);
+        userStudent.setCreatedAt(0L);
+        userStudent.setDisabled((byte)1);
+        userStudent.setRegisterFrom((byte)0);
+        userStudent.setEducationalBackgroundCode(0);
+        userStudent.setProfessionCode(0);
+        userStudent.setTypesOfDocumentsCode(0);
+        long insert = userStudentService.insert(userStudent);
+        System.out.println("insert = " + insert);
     }
 
     @Test

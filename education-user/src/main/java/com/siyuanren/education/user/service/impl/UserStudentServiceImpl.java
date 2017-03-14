@@ -3,6 +3,7 @@ package com.siyuanren.education.user.service.impl;
 
 import com.siyuanren.education.common.page.PageBean;
 import com.siyuanren.education.common.page.PageParam;
+import com.siyuanren.education.user.api.vo.UserStudentVO;
 import com.siyuanren.education.user.dao.UserStudentDAO;
 import com.siyuanren.education.user.entity.UserStudent;
 import com.siyuanren.education.user.service.UserStudentService;
@@ -31,7 +32,6 @@ public class UserStudentServiceImpl implements UserStudentService {
 
     @Override
     public UserStudent getById(int id) {
-        logger.info("id = " + id);
         return userStudentDAO.getById(id);
     }
 
@@ -62,5 +62,15 @@ public class UserStudentServiceImpl implements UserStudentService {
     @Override
     public PageBean listPage(PageParam pageParam, Map<String, Object> paramMap) {
         return userStudentDAO.listPage(pageParam, paramMap);
+    }
+
+    @Override
+    public void register(UserStudentVO userStudentVO) {
+
+    }
+
+    @Override
+    public void login(UserStudentVO userStudentVO) {
+
     }
 }
