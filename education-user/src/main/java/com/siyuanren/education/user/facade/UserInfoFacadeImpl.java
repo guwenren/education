@@ -5,6 +5,9 @@ import com.siyuanren.education.user.api.exception.UserException;
 import com.siyuanren.education.user.api.facade.UserInfoFacade;
 import com.siyuanren.education.user.entity.UserInfo;
 import com.siyuanren.education.user.service.UserInfoService;
+import com.siyuanren.education.user.service.impl.UserInfoServiceImpl;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -20,11 +23,14 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class UserInfoFacadeImpl implements UserInfoFacade {
 
+    private static Logger logger = LoggerFactory.getLogger(UserInfoFacadeImpl.class);
     @Autowired
     private UserInfoService userInfoService;
 
     @Override
     public UserInfoDTO getUserInfo(int id) {
+        System.out.println("id = " + id);
+        logger.info("getUserInfo");
         UserInfoDTO userInfoDTO = new UserInfoDTO();
         UserInfo userInfo = userInfoService.getById(id);
         if(userInfo == null){

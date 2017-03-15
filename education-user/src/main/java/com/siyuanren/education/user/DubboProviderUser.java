@@ -18,6 +18,7 @@ public class DubboProviderUser {
     public static void main(String[] args) {
         try {
             ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("classpath:spring/spring-context.xml");
+            System.out.println("context = " + context);
             logger.info("education-user");
             logger.info("context = " + context);
             context.start();

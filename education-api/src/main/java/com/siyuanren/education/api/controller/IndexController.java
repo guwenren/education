@@ -22,7 +22,7 @@ public class IndexController {
     /**
      * 进入首页
      */
-    @RequestMapping(value = "index", method = RequestMethod.GET)
+    @RequestMapping(value = "/", method = RequestMethod.GET)
     @ResponseBody
     public Result index() {
         Result result = new Result();

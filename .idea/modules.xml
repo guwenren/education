@@ -9,7 +9,6 @@
       <module fileurl="file://$PROJECT_DIR$/education-parent/education-parent.iml" filepath="$PROJECT_DIR$/education-parent/education-parent.iml" />
       <module fileurl="file://$PROJECT_DIR$/education-user/education-user.iml" filepath="$PROJECT_DIR$/education-user/education-user.iml" />
       <module fileurl="file://$PROJECT_DIR$/education-user-facade/education-user-facade.iml" filepath="$PROJECT_DIR$/education-user-facade/education-user-facade.iml" />
-      <module fileurl="file://$PROJECT_DIR$/education-api/education-web.iml" filepath="$PROJECT_DIR$/education-api/education-web.iml" />
     </modules>
   </component>
 </project>
