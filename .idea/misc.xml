@@ -12,6 +12,7 @@
         <option value="$PROJECT_DIR$/education-common/pom.xml" />
         <option value="$PROJECT_DIR$/education-common-conf/pom.xml" />
         <option value="$PROJECT_DIR$/education-user-facade/pom.xml" />
+        <option value="$PROJECT_DIR$/education-base/pom.xml" />
       </list>
     </option>
   </component>

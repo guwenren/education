@@ -4,9 +4,9 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/education.iml" filepath="$PROJECT_DIR$/education.iml" />
       <module fileurl="file://$PROJECT_DIR$/education-api/education-api.iml" filepath="$PROJECT_DIR$/education-api/education-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/education-base/education-base.iml" filepath="$PROJECT_DIR$/education-base/education-base.iml" />
       <module fileurl="file://$PROJECT_DIR$/education-common/education-common.iml" filepath="$PROJECT_DIR$/education-common/education-common.iml" />
       <module fileurl="file://$PROJECT_DIR$/education-common-conf/education-common-conf.iml" filepath="$PROJECT_DIR$/education-common-conf/education-common-conf.iml" />
-      <module fileurl="file://$PROJECT_DIR$/education-parent/education-parent.iml" filepath="$PROJECT_DIR$/education-parent/education-parent.iml" />
       <module fileurl="file://$PROJECT_DIR$/education-user/education-user.iml" filepath="$PROJECT_DIR$/education-user/education-user.iml" />
       <module fileurl="file://$PROJECT_DIR$/education-user-facade/education-user-facade.iml" filepath="$PROJECT_DIR$/education-user-facade/education-user-facade.iml" />
     </modules>
