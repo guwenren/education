@@ -16,7 +16,7 @@
 	<dubbo:monitor protocol="registry"/>
 
 	<!-- 当ProtocolConfig和ServiceConfig某属性没有配置时,采用此缺省值 -->
-	<dubbo:provider timeout="30000" threadpool="fixed" threads="100" accepts="1000" />
+	<dubbo:provider timeout="30000" threadpool="fixed" threads="100" accepts="1000" group="develop" />
 
 	<!-- 提供服务接口 -->
 	<dubbo:service retries="0" interface="com.siyuanren.education.user.api.facade.UserInfoFacade" ref="userInfoFacadeImpl" />
