@@ -42,7 +42,6 @@
         <jodd.version>3.7</jodd.version>
     </properties>
     <dependencies>
-
         <dependency>
             <groupId>cglib</groupId>
             <artifactId>cglib</artifactId>
