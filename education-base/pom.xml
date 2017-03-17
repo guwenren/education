@@ -10,11 +10,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <modules>
-        <!--<module>../education-common-conf</module>-->
-        <!--<module>../education-common</module>-->
-        <!--<module>../education-user-facade</module>-->
-        <!--<module>../education-user</module>-->
-        <!--<module>../education-api</module>-->
+        <module>../education-config</module>
+        <module>../education-common</module>
+        <module>../education-user-facade</module>
+        <module>../education-user</module>
+        <module>../education-api</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

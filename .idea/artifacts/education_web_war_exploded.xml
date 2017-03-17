@@ -11,7 +11,7 @@
             <element id="module-output" name="education-common" />
           </element>
           <element id="archive" name="education-common-conf-1.0-SNAPSHOT.jar">
-            <element id="module-output" name="education-common-conf" />
+            <element id="module-output" name="education-config" />
           </element>
           <element id="library" level="project" name="Maven: cglib:cglib:2.2.2" />
           <element id="library" level="project" name="Maven: asm:asm:3.3.1" />

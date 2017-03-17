@@ -31,7 +31,7 @@
         </dependency>
         <dependency>
             <groupId>com.siyuanren.education</groupId>
-            <artifactId>education-common-conf</artifactId>
+            <artifactId>education-config</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>

@@ -23,7 +23,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="education-common" />
-    <orderEntry type="module" module-name="education-common-conf" />
+    <orderEntry type="module" module-name="education-config" />
     <orderEntry type="module" module-name="education-user-facade" />
     <orderEntry type="library" name="Maven: cglib:cglib:2.2.2" level="project" />
     <orderEntry type="library" name="Maven: asm:asm:3.3.1" level="project" />

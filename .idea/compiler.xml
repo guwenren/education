@@ -9,6 +9,7 @@
         <module name="education-api" />
         <module name="education-common" />
         <module name="education-common-conf" />
+        <module name="education-config" />
         <module name="education-user" />
         <module name="education-user-facade" />
         <module name="education-web" />
@@ -20,6 +21,7 @@
       <module name="education-base" target="1.8" />
       <module name="education-common" target="1.8" />
       <module name="education-common-conf" target="1.8" />
+      <module name="education-config" target="1.8" />
       <module name="education-parent" target="1.8" />
       <module name="education-user" target="1.8" />
       <module name="education-user-facade" target="1.8" />
